@@ -1,9 +1,10 @@
 # coding=utf-8
 
 from setuptools import setup
+from setuptools import find_packages
 
 setup(
-    name="infi.systray",
+    name="systray",
     version="0.1.11",
-    py_modules="infi.systray",
+    packages=find_packages(),
 )
