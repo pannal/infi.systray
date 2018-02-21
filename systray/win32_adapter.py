@@ -2,6 +2,8 @@ import ctypes
 import locale
 import sys
 
+from ctypes import wintypes
+
 RegisterWindowMessage = ctypes.windll.user32.RegisterWindowMessageA
 LoadCursor = ctypes.windll.user32.LoadCursorA
 LoadIcon = ctypes.windll.user32.LoadIconA
@@ -183,7 +185,7 @@ def LOWORD(w):
     return w & 0xFFFF
 
 def PumpMessages():
-    msg = MSG()
+    msg = wintypes.MSG()
     while GetMessage(ctypes.byref(msg), None, 0, 0) > 0:
         TranslateMessage(ctypes.byref(msg))
         DispatchMessage(ctypes.byref(msg))

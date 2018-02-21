@@ -218,7 +218,7 @@ class SysTrayIcon(object):
             self._create_menu(self._menu, self._menu_options)
             #SetMenuDefaultItem(self._menu, 1000, 0)
 
-        pos = POINT()
+        pos = wintypes.POINT()
         GetCursorPos(ctypes.byref(pos))
         # See http://msdn.microsoft.com/library/default.asp?url=/library/en-us/winui/menus_0hdi.asp
         SetForegroundWindow(self._hwnd)
